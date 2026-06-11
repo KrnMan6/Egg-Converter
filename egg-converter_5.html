@@ -1,0 +1,1364 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>*~* EGG CONVERTER *~* The #1 Egg Site on the WWW!!!</title>
+<style>
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+
+  body {
+    background-color: #008080;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='40' height='40'%3E%3Ccircle cx='20' cy='20' r='2' fill='%23006666' opacity='0.4'/%3E%3C/svg%3E");
+    font-family: 'Comic Sans MS', 'Comic Sans', cursive;
+    font-size: 14px;
+    color: #000000;
+    padding: 8px;
+  }
+
+  .page {
+    max-width: 720px;
+    margin: 0 auto;
+  }
+
+  /* ---- WINDOWS 95 PANEL ---- */
+  .win95 {
+    background: #C0C0C0;
+    border-top: 2px solid #FFFFFF;
+    border-left: 2px solid #FFFFFF;
+    border-right: 2px solid #808080;
+    border-bottom: 2px solid #808080;
+    margin-bottom: 10px;
+  }
+
+  .win95-titlebar {
+    background: linear-gradient(to right, #000080, #1084D0);
+    color: #FFFFFF;
+    font-family: 'Arial', sans-serif;
+    font-size: 12px;
+    font-weight: bold;
+    padding: 3px 6px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    user-select: none;
+  }
+
+  .win95-titlebar .title-left { display: flex; align-items: center; gap: 4px; }
+
+  .win95-btns { display: flex; gap: 2px; }
+
+  .win95-btn {
+    background: #C0C0C0;
+    border-top: 1px solid #FFFFFF;
+    border-left: 1px solid #FFFFFF;
+    border-right: 1px solid #404040;
+    border-bottom: 1px solid #404040;
+    width: 16px;
+    height: 14px;
+    font-size: 9px;
+    font-family: 'Arial', sans-serif;
+    font-weight: bold;
+    color: #000;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    line-height: 1;
+  }
+
+  .win95-body { padding: 10px; }
+
+  /* ---- INSET / OUTSET ---- */
+  .inset {
+    border-top: 2px solid #808080;
+    border-left: 2px solid #808080;
+    border-right: 2px solid #FFFFFF;
+    border-bottom: 2px solid #FFFFFF;
+    background: #FFFFFF;
+    padding: 8px;
+  }
+
+  .outset {
+    border-top: 2px solid #FFFFFF;
+    border-left: 2px solid #FFFFFF;
+    border-right: 2px solid #808080;
+    border-bottom: 2px solid #808080;
+    background: #C0C0C0;
+    padding: 6px 12px;
+    display: inline-block;
+  }
+
+  /* ---- HEADER ---- */
+  .site-header {
+    text-align: center;
+    background: #C0C0C0;
+    border-top: 2px solid #FFFFFF;
+    border-left: 2px solid #FFFFFF;
+    border-right: 2px solid #808080;
+    border-bottom: 2px solid #808080;
+    padding: 12px 8px 8px;
+    margin-bottom: 8px;
+  }
+
+  h1 {
+    font-family: 'Times New Roman', Times, serif;
+    font-size: 32px;
+    font-weight: bold;
+    color: #FF0000;
+    text-shadow: 2px 2px #FFFF00;
+    margin-bottom: 4px;
+  }
+
+  .rainbow {
+    font-family: 'Comic Sans MS', cursive;
+    font-size: 13px;
+    font-weight: bold;
+  }
+  .rainbow span:nth-child(1) { color: #FF0000; }
+  .rainbow span:nth-child(2) { color: #FF8800; }
+  .rainbow span:nth-child(3) { color: #FFFF00; }
+  .rainbow span:nth-child(4) { color: #00AA00; }
+  .rainbow span:nth-child(5) { color: #0000FF; }
+  .rainbow span:nth-child(6) { color: #8800AA; }
+  .rainbow span:nth-child(7) { color: #FF0000; }
+  .rainbow span:nth-child(8) { color: #FF8800; }
+  .rainbow span:nth-child(9) { color: #FFFF00; }
+  .rainbow span:nth-child(10) { color: #00AA00; }
+  .rainbow span:nth-child(11) { color: #0000FF; }
+  .rainbow span:nth-child(12) { color: #8800AA; }
+  .rainbow span:nth-child(13) { color: #FF0000; }
+  .rainbow span:nth-child(14) { color: #FF8800; }
+  .rainbow span:nth-child(15) { color: #FFFF00; }
+  .rainbow span:nth-child(16) { color: #00AA00; }
+  .rainbow span:nth-child(17) { color: #0000FF; }
+  .rainbow span:nth-child(18) { color: #8800AA; }
+  .rainbow span:nth-child(19) { color: #FF0000; }
+  .rainbow span:nth-child(20) { color: #FF8800; }
+  .rainbow span:nth-child(21) { color: #FFFF00; }
+  .rainbow span:nth-child(22) { color: #00AA00; }
+  .rainbow span:nth-child(23) { color: #0000FF; }
+
+  .hit-counter {
+    font-family: 'Courier New', monospace;
+    font-size: 11px;
+    background: #000000;
+    color: #00FF00;
+    display: inline-block;
+    padding: 2px 8px;
+    margin-top: 6px;
+    letter-spacing: 2px;
+  }
+
+  marquee {
+    background: #000080;
+    color: #FFFF00;
+    font-family: 'Comic Sans MS', cursive;
+    font-size: 13px;
+    font-weight: bold;
+    padding: 4px 0;
+    margin-bottom: 8px;
+    border-top: 2px solid #FFFFFF;
+    border-bottom: 2px solid #808080;
+  }
+
+  /* ---- BUTTONS ---- */
+  .btn95 {
+    background: #C0C0C0;
+    border-top: 2px solid #FFFFFF;
+    border-left: 2px solid #FFFFFF;
+    border-right: 2px solid #404040;
+    border-bottom: 2px solid #404040;
+    font-family: 'Comic Sans MS', cursive;
+    font-size: 14px;
+    font-weight: bold;
+    color: #000000;
+    padding: 6px 16px;
+    cursor: pointer;
+    min-width: 80px;
+  }
+  .btn95:active {
+    border-top: 2px solid #404040;
+    border-left: 2px solid #404040;
+    border-right: 2px solid #FFFFFF;
+    border-bottom: 2px solid #FFFFFF;
+    padding: 7px 15px 5px 17px;
+  }
+  .btn95:disabled {
+    color: #808080;
+    cursor: default;
+  }
+
+  .facts-btn {
+    background: #FF0000;
+    color: #FFFF00;
+    font-family: 'Comic Sans MS', cursive;
+    font-size: 16px;
+    font-weight: bold;
+    border-top: 2px solid #FF8888;
+    border-left: 2px solid #FF8888;
+    border-right: 2px solid #880000;
+    border-bottom: 2px solid #880000;
+    padding: 8px 20px;
+    cursor: pointer;
+    animation: blink-border 1s step-start infinite;
+  }
+  .facts-btn:active {
+    border-top: 2px solid #880000;
+    border-left: 2px solid #880000;
+    border-right: 2px solid #FF8888;
+    border-bottom: 2px solid #FF8888;
+  }
+
+  @keyframes blink-border {
+    0%, 100% { outline: 2px dotted #FFFF00; }
+    50% { outline: 2px dotted transparent; }
+  }
+
+  /* ---- FACT BUBBLE ---- */
+  .fact-bubble {
+    display: none;
+    background: #FFFFCC;
+    border: 3px solid #FF0000;
+    padding: 10px;
+    margin-top: 8px;
+    font-family: 'Comic Sans MS', cursive;
+    font-size: 13px;
+  }
+
+  .fact-num {
+    font-weight: bold;
+    color: #0000FF;
+    font-size: 11px;
+    text-decoration: underline;
+    margin-bottom: 4px;
+    text-transform: uppercase;
+  }
+
+  .fact-text { color: #000080; line-height: 1.5; }
+
+  /* ---- CONTROLS ---- */
+  .controls {
+    display: flex;
+    gap: 8px;
+    align-items: flex-end;
+    flex-wrap: wrap;
+    margin-bottom: 10px;
+  }
+
+  .field { flex: 1; min-width: 140px; }
+
+  .field label {
+    display: block;
+    font-weight: bold;
+    font-size: 12px;
+    margin-bottom: 3px;
+    color: #000080;
+  }
+
+  select {
+    width: 100%;
+    height: 22px;
+    background: #FFFFFF;
+    border-top: 2px solid #808080;
+    border-left: 2px solid #808080;
+    border-right: 2px solid #FFFFFF;
+    border-bottom: 2px solid #FFFFFF;
+    font-family: 'Comic Sans MS', cursive;
+    font-size: 12px;
+    color: #000000;
+    padding: 0 2px;
+    appearance: auto;
+  }
+
+  input[type=number] {
+    width: 60px;
+    height: 22px;
+    background: #FFFFFF;
+    border-top: 2px solid #808080;
+    border-left: 2px solid #808080;
+    border-right: 2px solid #FFFFFF;
+    border-bottom: 2px solid #FFFFFF;
+    font-family: 'Courier New', monospace;
+    font-size: 14px;
+    font-weight: bold;
+    color: #000000;
+    text-align: center;
+    padding: 0 4px;
+  }
+
+  .unit-label { font-size: 12px; color: #000080; font-weight: bold; }
+
+  .swap-btn {
+    height: 22px;
+    padding: 0 10px;
+    font-size: 14px;
+  }
+
+  /* ---- RESULT ---- */
+  .result-area {
+    background: #000080;
+    border: 3px inset #808080;
+    padding: 10px;
+    margin-top: 8px;
+  }
+
+  .result-big {
+    font-family: 'Comic Sans MS', cursive;
+    font-size: 26px;
+    font-weight: bold;
+    color: #FFFF00;
+    text-shadow: 1px 1px #FF0000;
+    margin-bottom: 4px;
+  }
+
+  .result-desc {
+    font-size: 12px;
+    color: #00FFFF;
+    margin-bottom: 8px;
+    font-family: 'Courier New', monospace;
+  }
+  .result-desc strong { color: #FFFFFF; }
+
+  .egg-vis {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1px;
+    max-height: 90px;
+    overflow: hidden;
+    background: #000066;
+    padding: 4px;
+    border: 1px inset #404080;
+  }
+  .egg-vis span { font-size: 16px; line-height: 1; }
+
+  .overflow-note {
+    font-size: 11px;
+    color: #AAAAAA;
+    margin-top: 3px;
+    font-family: 'Courier New', monospace;
+  }
+
+  .fun-note {
+    display: none;
+    font-size: 11px;
+    color: #FFFF00;
+    font-style: italic;
+    margin-top: 6px;
+    padding: 4px 6px;
+    background: #004400;
+    border: 1px solid #00FF00;
+    font-family: 'Comic Sans MS', cursive;
+  }
+
+  /* ---- SECTION HEADS ---- */
+  .section-head {
+    font-family: 'Times New Roman', serif;
+    font-size: 18px;
+    font-weight: bold;
+    color: #FFFF00;
+    background: #000080;
+    padding: 4px 10px;
+    margin-bottom: 6px;
+    border-left: 6px solid #FF0000;
+    text-shadow: 1px 1px #000000;
+  }
+
+  /* ---- TABLE ---- */
+  table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 12px;
+    font-family: 'Arial', sans-serif;
+    background: #FFFFFF;
+  }
+
+  thead th {
+    background: #000080;
+    color: #FFFFFF;
+    font-weight: bold;
+    padding: 4px 8px;
+    text-align: left;
+    border: 1px solid #808080;
+    font-size: 11px;
+    text-transform: uppercase;
+  }
+  thead th:not(:first-child) { text-align: right; }
+
+  tbody td {
+    padding: 3px 8px;
+    border: 1px solid #C0C0C0;
+    color: #000000;
+    vertical-align: middle;
+  }
+  tbody td:not(:first-child) { text-align: right; color: #404040; }
+  tbody tr:nth-child(even) { background: #E8E8FF; }
+  tbody tr:nth-child(odd) { background: #FFFFFF; }
+  tbody tr.highlighted { background: #FFFF99 !important; }
+  tbody tr.highlighted td { color: #000000 !important; font-weight: bold; }
+  tbody tr:hover { background: #CCE0FF !important; }
+
+  .tag {
+    display: inline-block;
+    font-size: 9px;
+    padding: 1px 4px;
+    font-weight: bold;
+    vertical-align: middle;
+    margin-left: 3px;
+    border: 1px solid;
+    font-family: 'Arial', sans-serif;
+  }
+  .tag-approx { background: #FFFF00; color: #884400; border-color: #884400; }
+  .tag-fun { background: #FF88FF; color: #440044; border-color: #440044; }
+  .tag-cell { background: #88FFFF; color: #004444; border-color: #004444; }
+
+  /* ---- TRIVIA ---- */
+  .trivia-q {
+    font-family: 'Comic Sans MS', cursive;
+    font-size: 14px;
+    font-weight: bold;
+    color: #000080;
+    margin-bottom: 10px;
+    line-height: 1.4;
+    min-height: 40px;
+    padding: 6px;
+    background: #FFFFCC;
+    border: 2px inset #808080;
+  }
+
+  .trivia-options {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 6px;
+    margin-bottom: 8px;
+  }
+
+  .opt-btn {
+    background: #C0C0C0;
+    border-top: 2px solid #FFFFFF;
+    border-left: 2px solid #FFFFFF;
+    border-right: 2px solid #404040;
+    border-bottom: 2px solid #404040;
+    padding: 6px 10px;
+    text-align: left;
+    cursor: pointer;
+    font-family: 'Comic Sans MS', cursive;
+    font-size: 12px;
+    color: #000000;
+    line-height: 1.3;
+  }
+  .opt-btn:hover:not(:disabled) { background: #D8D8D8; }
+  .opt-btn:active:not(:disabled) {
+    border-top: 2px solid #404040;
+    border-left: 2px solid #404040;
+    border-right: 2px solid #FFFFFF;
+    border-bottom: 2px solid #FFFFFF;
+  }
+  .opt-btn.correct { background: #00CC00; color: #FFFFFF; border-color: #006600; }
+  .opt-btn.wrong   { background: #CC0000; color: #FFFFFF; border-color: #660000; }
+  .opt-btn:disabled { cursor: default; }
+
+  .opt-letter {
+    display: inline-block;
+    width: 18px;
+    height: 18px;
+    border-radius: 0;
+    background: #000080;
+    color: #FFFFFF;
+    font-size: 10px;
+    font-weight: bold;
+    text-align: center;
+    line-height: 18px;
+    margin-right: 5px;
+    vertical-align: middle;
+    font-family: 'Arial', sans-serif;
+  }
+  .opt-btn.correct .opt-letter { background: #006600; }
+  .opt-btn.wrong   .opt-letter { background: #660000; }
+
+  .trivia-result {
+    font-size: 13px;
+    font-weight: bold;
+    min-height: 20px;
+    margin-bottom: 8px;
+    font-family: 'Comic Sans MS', cursive;
+    color: #000000;
+  }
+  .trivia-result.win  { color: #006600; }
+  .trivia-result.lose { color: #CC0000; }
+
+  .trivia-footer {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 8px;
+    flex-wrap: wrap;
+  }
+
+  .score-badge {
+    font-family: 'Courier New', monospace;
+    font-size: 14px;
+    font-weight: bold;
+    color: #000080;
+    background: #FFFF99;
+    padding: 2px 8px;
+    border: 2px inset #808080;
+  }
+
+  /* ---- EGG GAME ---- */
+  .diff-row {
+    display: flex;
+    gap: 6px;
+    margin-bottom: 8px;
+    flex-wrap: wrap;
+  }
+
+  .diff-btn {
+    font-family: 'Comic Sans MS', cursive;
+    font-size: 12px;
+    font-weight: bold;
+  }
+  .diff-btn.active {
+    border-top: 2px solid #404040;
+    border-left: 2px solid #404040;
+    border-right: 2px solid #FFFFFF;
+    border-bottom: 2px solid #FFFFFF;
+    background: #A0A0FF;
+    color: #000000;
+  }
+
+  .game-arena {
+    position: relative;
+    width: 100%;
+    height: 220px;
+    background: #000000;
+    border: 3px inset #808080;
+    margin-bottom: 8px;
+    overflow: hidden;
+    user-select: none;
+  }
+
+  .game-idle-msg {
+    position: absolute;
+    inset: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: 'Courier New', monospace;
+    font-size: 12px;
+    color: #00FF00;
+    pointer-events: none;
+    text-align: center;
+    padding: 10px;
+  }
+
+  .game-timer-bar {
+    position: absolute;
+    bottom: 0; left: 0; right: 0;
+    height: 8px;
+    background: #333333;
+  }
+
+  .game-timer-fill {
+    height: 100%;
+    background: #FF0000;
+    width: 100%;
+    transition: width 0.1s linear;
+  }
+
+  .game-counter {
+    position: absolute;
+    top: 6px; right: 8px;
+    font-family: 'Courier New', monospace;
+    font-size: 22px;
+    font-weight: bold;
+    color: #FFFF00;
+    pointer-events: none;
+    text-shadow: 1px 1px #FF6600;
+  }
+
+  .game-clock {
+    position: absolute;
+    top: 6px; left: 8px;
+    font-family: 'Courier New', monospace;
+    font-size: 22px;
+    font-weight: bold;
+    color: #00FF00;
+    pointer-events: none;
+  }
+  .game-clock.urgent { color: #FF0000; animation: blink 0.4s step-start infinite; }
+  @keyframes blink { 50% { opacity: 0; } }
+
+  .game-token {
+    position: absolute;
+    cursor: pointer;
+    font-size: 52px;
+    line-height: 1;
+    touch-action: manipulation;
+    -webkit-tap-highlight-color: transparent;
+  }
+  .game-token.hotdog { cursor: not-allowed; }
+  .game-token:active { transform: scale(0.85); }
+
+  .click-pop {
+    position: absolute;
+    pointer-events: none;
+    font-family: 'Courier New', monospace;
+    font-size: 16px;
+    font-weight: bold;
+    color: #FFFF00;
+    animation: floatUp 0.6s ease-out forwards;
+    text-shadow: 1px 1px #FF0000;
+  }
+  .hotdog-flash {
+    position: absolute;
+    pointer-events: none;
+    font-family: 'Courier New', monospace;
+    font-size: 14px;
+    font-weight: bold;
+    color: #FF0000;
+    animation: floatUp 0.7s ease-out forwards;
+  }
+  @keyframes floatUp {
+    0%   { opacity: 1; transform: translateY(0); }
+    100% { opacity: 0; transform: translateY(-40px); }
+  }
+
+  .game-start-btn {
+    background: #00AA00;
+    color: #FFFFFF;
+    font-family: 'Comic Sans MS', cursive;
+    font-size: 16px;
+    font-weight: bold;
+    border-top: 2px solid #88FF88;
+    border-left: 2px solid #88FF88;
+    border-right: 2px solid #005500;
+    border-bottom: 2px solid #005500;
+    padding: 6px 20px;
+    cursor: pointer;
+  }
+  .game-start-btn:active {
+    border-top: 2px solid #005500;
+    border-left: 2px solid #005500;
+    border-right: 2px solid #88FF88;
+    border-bottom: 2px solid #88FF88;
+  }
+  .game-start-btn:disabled { background: #808080; border-color: #606060 #A0A0A0 #A0A0A0 #606060; cursor: default; }
+
+  .game-result {
+    display: none;
+    margin-top: 8px;
+    background: #FFFFCC;
+    border: 3px solid #FF0000;
+    padding: 10px;
+    font-family: 'Comic Sans MS', cursive;
+    font-size: 14px;
+    font-weight: bold;
+    color: #000080;
+    line-height: 1.6;
+    animation: none;
+  }
+  .game-result .big-score {
+    font-family: 'Times New Roman', serif;
+    font-size: 48px;
+    font-weight: bold;
+    color: #FF0000;
+    text-shadow: 2px 2px #FFFF00;
+    display: block;
+    line-height: 1;
+    margin: 4px 0;
+    text-align: center;
+  }
+
+  /* ---- FOOTER ---- */
+  .site-footer {
+    background: #C0C0C0;
+    border-top: 2px solid #FFFFFF;
+    border-left: 2px solid #FFFFFF;
+    border-right: 2px solid #808080;
+    border-bottom: 2px solid #808080;
+    padding: 8px;
+    font-size: 11px;
+    color: #404040;
+    font-family: 'Arial', sans-serif;
+    line-height: 1.6;
+    text-align: center;
+  }
+
+  hr.win95hr {
+    border: none;
+    border-top: 2px solid #808080;
+    border-bottom: 2px solid #FFFFFF;
+    margin: 8px 0;
+  }
+
+  .under { text-decoration: underline; color: #0000FF; cursor: pointer; }
+  .blink { animation: blink 1s step-start infinite; }
+
+  /* Animated spinning egg in header */
+  .spin-egg {
+    display: inline-block;
+    font-size: 40px;
+    animation: spin 2s linear infinite;
+  }
+  @keyframes spin {
+    0%   { transform: rotateY(0deg); }
+    25%  { transform: rotateY(90deg) scaleX(0.1); }
+    50%  { transform: rotateY(180deg); }
+    75%  { transform: rotateY(270deg) scaleX(0.1); }
+    100% { transform: rotateY(360deg); }
+  }
+
+  .stars {
+    font-size: 18px;
+    color: #FFFF00;
+    letter-spacing: 4px;
+  }
+
+  /* count-wrap */
+  .count-wrap { display: flex; align-items: center; gap: 6px; margin-top: 4px; }
+</style>
+</head>
+<body>
+<div class="page">
+
+  <!-- MARQUEE -->
+  <marquee scrollamount="4">🥚 WELCOME TO THE OFFICIAL EGG CONVERTER WEBSITE!!! 🥚 &nbsp;&nbsp;&nbsp; FREE TO USE!!! &nbsp;&nbsp;&nbsp; BEST VIEWED IN NETSCAPE NAVIGATOR 3.0 AT 800x600 &nbsp;&nbsp;&nbsp; 🥚 EGG EGG EGG EGG EGG 🥚 &nbsp;&nbsp;&nbsp; CLICK THE EGG!!! &nbsp;&nbsp;&nbsp;</marquee>
+
+  <!-- HEADER -->
+  <div class="site-header">
+    <div class="stars">★ ★ ★ ★ ★ ★ ★ ★ ★ ★</div>
+    <span class="spin-egg">🥚</span>
+    <h1>~~~ EGG CONVERTER ~~~</h1>
+    <div class="rainbow">
+      <span>H</span><span>o</span><span>w</span><span> </span><span>M</span><span>a</span><span>n</span><span>y</span><span> </span><span>E</span><span>g</span><span>g</span><span>s</span><span> </span><span>E</span><span>q</span><span>u</span><span>a</span><span>l</span><span> </span><span>A</span><span>n</span><span>y</span>
+    </div>
+    <div class="rainbow" style="margin-top:2px">
+      <span>O</span><span>t</span><span>h</span><span>e</span><span>r</span><span> </span><span>E</span><span>g</span><span>g</span><span>?</span><span> </span><span>F</span><span>i</span><span>n</span><span>d</span><span> </span><span>O</span><span>u</span><span>t</span><span> </span><span>N</span><span>o</span><span>w</span>
+    </div>
+    <br>
+    <div class="stars">★ ★ ★ ★ ★ ★ ★ ★ ★ ★</div>
+    <br>
+    <div class="hit-counter">VISITORS: 0031337</div>
+    <div style="font-size:10px;color:#808080;margin-top:4px;font-family:Arial,sans-serif">Last updated: October 14, 1996 &nbsp;|&nbsp; <span class="under">Sign My Guestbook!!!</span> &nbsp;|&nbsp; <span class="under">Email Webmaster</span></div>
+  </div>
+
+  <!-- EGG FACTS -->
+  <div class="win95">
+    <div class="win95-titlebar">
+      <div class="title-left">🥚 EGG FACTS.EXE</div>
+      <div class="win95-btns">
+        <div class="win95-btn">_</div>
+        <div class="win95-btn">□</div>
+        <div class="win95-btn">✕</div>
+      </div>
+    </div>
+    <div class="win95-body" style="text-align:center">
+      <p style="font-size:12px;margin-bottom:8px;color:#000080;font-family:Arial,sans-serif">Click the button below to learn AMAZING egg facts!!!</p>
+      <button class="facts-btn" onclick="showFact()">🥚 EGG FACTS 🥚</button>
+      <div class="fact-bubble" id="factBubble">
+        <div class="fact-num" id="factNum">FACT #1</div>
+        <div class="fact-text" id="factText"></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- CONVERTER -->
+  <div class="win95">
+    <div class="win95-titlebar">
+      <div class="title-left">🥚 EGG CONVERTER v1.0</div>
+      <div class="win95-btns">
+        <div class="win95-btn">_</div>
+        <div class="win95-btn">□</div>
+        <div class="win95-btn">✕</div>
+      </div>
+    </div>
+    <div class="win95-body">
+      <div class="controls">
+        <div class="field">
+          <label>FROM EGG TYPE:</label>
+          <select id="fromEgg" onchange="calculate()"></select>
+          <div class="count-wrap">
+            <input type="number" id="fromCount" value="3" min="1" max="9999" oninput="calculate()" />
+            <span class="unit-label" id="fromUnit">eggs</span>
+          </div>
+        </div>
+
+        <div style="align-self:flex-end;padding-bottom:4px">
+          <button class="btn95 swap-btn" onclick="swapEggs()" title="Swap">⇄ SWAP</button>
+        </div>
+
+        <div class="field">
+          <label>TO EGG TYPE:</label>
+          <select id="toEgg" onchange="calculate()"></select>
+          <div style="height:26px;display:flex;align-items:center;margin-top:4px">
+            <span class="unit-label">= see result below</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="result-area" id="resultArea">
+        <div class="result-big" id="resultBig">---</div>
+        <div class="result-desc" id="resultDesc"></div>
+        <div class="egg-vis" id="eggVis"></div>
+        <div class="overflow-note" id="overflowNote"></div>
+        <div class="fun-note" id="funNote"></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- REFERENCE TABLE -->
+  <div class="section-head">📋 EGG WEIGHT REFERENCE TABLE</div>
+  <div class="win95" style="padding:0">
+    <table>
+      <thead>
+        <tr>
+          <th>Egg Type</th>
+          <th>Avg. Weight</th>
+          <th>vs. Chicken</th>
+        </tr>
+      </thead>
+      <tbody id="tableBody"></tbody>
+    </table>
+  </div>
+  <br>
+
+  <!-- TRIVIA -->
+  <div class="win95">
+    <div class="win95-titlebar">
+      <div class="title-left">🧠 EGG TRIVIA CHALLENGE!!!</div>
+      <div class="win95-btns">
+        <div class="win95-btn">_</div>
+        <div class="win95-btn">□</div>
+        <div class="win95-btn">✕</div>
+      </div>
+    </div>
+    <div class="win95-body">
+      <div class="trivia-q" id="triviaQ">Loading question...</div>
+      <div class="trivia-options" id="triviaOptions"></div>
+      <div class="trivia-result" id="triviaResult"></div>
+      <div class="trivia-footer">
+        <div class="score-badge" id="scoreDisplay">SCORE: 0 / 0</div>
+        <button class="btn95" id="nextBtn" onclick="nextQuestion()">Next &gt;&gt;</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- EGG GAME -->
+  <div class="win95">
+    <div class="win95-titlebar">
+      <div class="title-left">🎮 EGG CLICKER GAME!!!</div>
+      <div class="win95-btns">
+        <div class="win95-btn">_</div>
+        <div class="win95-btn">□</div>
+        <div class="win95-btn">✕</div>
+      </div>
+    </div>
+    <div class="win95-body">
+      <div class="diff-row">
+        <button class="btn95 diff-btn active" onclick="setDiff('easy',this)">🟢 EASY</button>
+        <button class="btn95 diff-btn" onclick="setDiff('medium',this)">🟡 MEDIUM</button>
+        <button class="btn95 diff-btn" onclick="setDiff('hard',this)">🔴 HARD</button>
+      </div>
+      <div class="game-arena" id="gameArena">
+        <div class="game-timer-bar"><div class="game-timer-fill" id="timerFill"></div></div>
+        <div class="game-clock" id="gameClock" style="display:none">10</div>
+        <div class="game-counter" id="gameCounter" style="display:none">0</div>
+        <div class="game-idle-msg" id="gameIdleMsg">Press START and click the egg as fast as you can!! 🥚</div>
+      </div>
+      <button class="game-start-btn" id="gameStartBtn" onclick="startGame()">▶ START GAME</button>
+      <div class="game-result" id="gameResult"></div>
+    </div>
+  </div>
+
+  <!-- FOOTER -->
+  <hr class="win95hr">
+  <div class="site-footer">
+    <div style="font-size:13px;font-weight:bold;color:#000080">~*~ EGG CONVERTER ~*~ Est. 1996 ~*~</div>
+    <hr class="win95hr">
+    <p>Weights are averages — actual eggs vary by breed, age, season, and individual bird. Conversions are by raw weight only.</p>
+    <p>Fairy egg: yolk-less "misfire" egg, 10–20g. Also: fart egg, wind egg, witch egg.</p>
+    <p>Human ovum: ~0.0000015g (a single cell, 0.12mm) — included for fun. Do not attempt to use in baking.</p>
+    <hr class="win95hr">
+    <div style="font-size:10px;color:#808080">
+      <span class="under">Home</span> | <span class="under">About Eggs</span> | <span class="under">Egg FAQ</span> | <span class="under">Links</span> | <span class="under">Guestbook</span>
+      <br>© 1996 EggConverter.com — All Rights Reserved — <span class="blink">❤️</span> Made with love and eggs
+    </div>
+  </div>
+
+</div>
+
+<script>
+/* ===== EGG DATA ===== */
+const eggs = [
+  { id:'human',   name:'Human ovum',        weight:0.0000015, note:'cell',   fun:'A human egg cell is ~0.12mm across — roughly the width of a hair. You need ~38 trillion of them to match one chicken egg. Not recommended for omelettes.' },
+  { id:'fairy',   name:'Chicken fairy egg',  weight:15,        note:'fun',    fun:'A fairy egg (also: fart egg, wind egg, witch egg) is a yolk-less misfire laid by a hen. Just egg white in a tiny shell. Typically 10-20g.' },
+  { id:'quail',   name:'Quail',              weight:9,         note:'',       fun:null },
+  { id:'robin',   name:'American robin',     weight:6,         note:'approx', fun:null },
+  { id:'turtle',  name:'Turtle (snapping)',  weight:12,        note:'approx', fun:null },
+  { id:'bantam',  name:'Bantam chicken',     weight:25,        note:'',       fun:null },
+  { id:'chicken', name:'Chicken (large)',    weight:57,        note:'',       fun:null },
+  { id:'duck',    name:'Duck',               weight:70,        note:'',       fun:null },
+  { id:'turkey',  name:'Turkey',             weight:80,        note:'',       fun:null },
+  { id:'goose',   name:'Goose',              weight:144,       note:'',       fun:null },
+  { id:'emu',     name:'Emu',                weight:610,       note:'',       fun:null },
+  { id:'ostrich', name:'Ostrich',            weight:1400,      note:'',       fun:null },
+];
+const CHICKEN_W = 57;
+
+/* ===== EGG FACTS ===== */
+const facts = [
+  "In the 1967 film Cool Hand Luke, Paul Newman's character bets he can eat 50 hard-boiled eggs in one hour — and does it. Food scientists later calculated he'd have consumed about 3,500 calories and his stomach would have been the size of a volleyball. The director made Newman eat real eggs for close-up shots. He reportedly did not want eggs for a very long time afterward.",
+  "The world record for eating hard-boiled eggs is 141 in 8 minutes, set by competitive eater Joey Chestnut. That's roughly one egg every 3.4 seconds, or about 2.5 eggs per bite if you're curious what his bites look like.",
+  "An ostrich egg is the largest egg laid by any living bird, but it's also the *smallest* egg relative to the size of the animal that laid it — making up only about 1-2% of the ostrich's body weight. A kiwi egg, by contrast, is about 15% of the bird's body weight, which sounds extremely uncomfortable.",
+  "Cleopatra reportedly bathed in sour donkey milk to keep her skin soft. She is not known to have bathed in eggs, but nobody's ruled it out either.",
+  "The shell of an egg has up to 17,000 tiny pores that allow gases to pass through. As an egg ages, it loses moisture and carbon dioxide through these pores, which is why older eggs float in water — a useful freshness test that requires zero equipment.",
+  "In medieval Europe, 'cock eggs' (what we now call fairy eggs) were thought to be laid by roosters and were considered cursed. The recommended countermeasure was to throw the egg backwards over your roof without looking. Whether this worked has not been scientifically verified.",
+  "The colour of a chicken's eggshell is determined by the breed and correlates with the colour of the hen's earlobes. White earlobes = white eggs. Red/brown earlobes = brown eggs. This is one of the most useless facts you'll carry with you for the rest of your life.",
+  "A group of flamingos is called a flamboyance. A flamingo egg is about 130g, which is roughly 2.3 chicken eggs. Flamingos lay only one egg per year. If a flamingo egg breaks, they do not get another attempt that season. Flamingos are experiencing this pressure right now.",
+  "The Faberge egg tradition began in 1885 when Tsar Alexander III commissioned Peter Carl Faberge to make an Easter egg for his wife. The original cost about 4,000 rubles. A Faberge egg sold at auction in 2014 for $33 million. Inflation is real.",
+  "In ancient Rome, eggs were so commonly associated with the start of things that they had a phrase: 'ab ovo usque ad mala' — from the egg to the apples — meaning from the beginning to the end of a meal. This is also where we get 'ab ovo' meaning 'from the beginning.' Latin: surprisingly egg-forward.",
+  "The 'yolk' of a fertilized dinosaur egg discovered in China was still intact after 70 million years. Researchers called it 'Baby Yingliang.' It had the fetal dinosaur curled inside in the same position as a modern bird embryo. Eggs: extremely consistent across geological time.",
+  "Emu eggs are dark green, almost black, and weigh about 600g. One emu egg equals roughly 10 chicken eggs and takes 50 minutes to hard-boil. They are described as tasting 'gamey' and 'rich.' The emu itself is a deeply strange animal that cannot walk backwards, once defeated the Australian military in a war, and lays approximately 20-50 eggs per year.",
+  "Quail eggs have been consumed since at least ancient Egypt. They were found in the tombs of pharaohs, presumably not still fresh. Japanese schoolchildren still receive quail eggs in their school lunches today, often pickled. The pickled quail egg is arguably the most elegant thing in a bento box.",
+  "Sea turtles can lay up to 110 eggs at a time, bury them in the sand, and then immediately return to the ocean, having contributed nothing to parenting beyond the initial deposit. The eggs incubate for 60 days alone on the beach. Turtle parenting is controversial.",
+  "The phrase 'egg on your face' — meaning public embarrassment — may derive from the practice of throwing eggs at bad performers. Alternatively, it may just refer to messy eating. Historians are not sure. Either origin is equally humiliating.",
+  "There are approximately 7 billion egg-laying hens in the world. The global population of humans is about 8 billion. The ratio of egg-layers to people is disturbingly close to 1:1. We are, per capita, very nearly matched with a chicken.",
+  "A hard-boiled egg will spin smoothly on a flat surface. A raw egg will wobble. This is because the liquid inside the raw egg sloshes around and disrupts the spin. This is a genuine, reliable kitchen science trick and also a surprisingly good party conversation if you are at the right kind of party.",
+  "The human egg cell — the ovum — is one of the largest single cells in the human body at about 0.12mm wide, visible to the naked eye. Despite this, it weighs approximately 0.0000015 grams. You would need 38 billion of them to fill a single chicken egg. The human body is both miraculous and deeply impractical.",
+  "In Japan, a raw egg cracked over hot rice — tamago gohan — is considered a breakfast staple by millions. The egg is stirred vigorously until frothy, seasoned with soy sauce, and poured over rice. Japan consumes approximately 340 eggs per person per year, one of the highest rates in the world. This may be related.",
+  "The world's most expensive commercially available egg is the Ayam Cemani fertilized egg, from a rare all-black Indonesian chicken (black feathers, black skin, black organs, black bones). A single fertilized Ayam Cemani egg can sell for $50-$100. Regular Ayam Cemani table eggs taste completely normal. The premium is entirely aesthetic.",
+];
+
+let factIndex = Math.floor(Math.random() * facts.length);
+let factShown = false;
+
+function showFact() {
+  const bubble = document.getElementById('factBubble');
+  const numEl = document.getElementById('factNum');
+  const textEl = document.getElementById('factText');
+  if (!factShown) { factShown = true; } else { factIndex = (factIndex + 1) % facts.length; }
+  numEl.textContent = 'FACT #' + (factIndex + 1) + ' OF ' + facts.length;
+  textEl.textContent = facts[factIndex];
+  bubble.style.display = 'block';
+}
+
+/* ===== CONVERTER ===== */
+function populate() {
+  const fromSel = document.getElementById('fromEgg');
+  const toSel = document.getElementById('toEgg');
+  eggs.forEach(e => {
+    fromSel.add(new Option(e.name, e.id));
+    toSel.add(new Option(e.name, e.id));
+  });
+  fromSel.value = 'duck';
+  toSel.value = 'quail';
+  buildTable();
+  calculate();
+}
+
+function buildTable() {
+  const tbody = document.getElementById('tableBody');
+  tbody.innerHTML = '';
+  eggs.forEach(e => {
+    const ratio = e.weight / CHICKEN_W;
+    let ratioStr;
+    if (e.id === 'human') ratioStr = '~1 in 38 trillion';
+    else if (ratio < 0.01) ratioStr = (1/ratio).toExponential(1) + 'x smaller';
+    else if (ratio < 1) ratioStr = (1/ratio).toFixed(1) + 'x smaller';
+    else if (e.id === 'chicken') ratioStr = '-- baseline';
+    else ratioStr = ratio.toFixed(1) + 'x larger';
+
+    let weightStr;
+    if (e.weight < 0.001) weightStr = (e.weight * 1e6).toFixed(2) + ' ug';
+    else if (e.weight < 1) weightStr = (e.weight * 1000).toFixed(0) + ' mg';
+    else weightStr = e.weight + 'g';
+
+    let tagHtml = '';
+    if (e.note === 'approx') tagHtml = '<span class="tag tag-approx">~approx</span>';
+    if (e.note === 'fun') tagHtml = '<span class="tag tag-fun">fairy</span>';
+    if (e.note === 'cell') tagHtml = '<span class="tag tag-cell">cell</span>';
+
+    const tr = document.createElement('tr');
+    tr.id = 'row-' + e.id;
+    tr.innerHTML = '<td>' + e.name + tagHtml + '</td><td>' + weightStr + '</td><td>' + ratioStr + '</td>';
+    tbody.appendChild(tr);
+  });
+}
+
+function formatWeight(w) {
+  if (w < 0.001) return (w * 1e6).toFixed(2) + ' ug';
+  if (w < 1) return (w * 1000).toFixed(0) + ' mg';
+  if (w < 1000) return w + 'g';
+  return (w/1000).toFixed(2) + 'kg';
+}
+
+function calculate() {
+  const fromId = document.getElementById('fromEgg').value;
+  const toId = document.getElementById('toEgg').value;
+  const count = Math.max(1, parseInt(document.getElementById('fromCount').value) || 1);
+  const fromEgg = eggs.find(e => e.id === fromId);
+  const toEgg = eggs.find(e => e.id === toId);
+
+  document.getElementById('fromUnit').textContent = count === 1 ? 'egg' : 'eggs';
+
+  const totalGrams = fromEgg.weight * count;
+  const raw = totalGrams / toEgg.weight;
+
+  const funNote = document.getElementById('funNote');
+  const fromFun = fromEgg.fun || toEgg.fun;
+  if (fromFun) { funNote.textContent = fromFun; funNote.style.display = 'block'; }
+  else { funNote.style.display = 'none'; }
+
+  const resultBig = document.getElementById('resultBig');
+  const resultDesc = document.getElementById('resultDesc');
+  const eggVis = document.getElementById('eggVis');
+  const overflowNote = document.getElementById('overflowNote');
+
+  if (fromId === toId) {
+    resultBig.textContent = count + (count === 1 ? ' egg' : ' eggs');
+    resultDesc.innerHTML = 'Same type -- no conversion needed.';
+    eggVis.innerHTML = '';
+    overflowNote.textContent = '';
+    highlightRows();
+    return;
+  }
+
+  let displayNum;
+  if (raw < 0.001) displayNum = raw.toExponential(2);
+  else if (raw < 1) displayNum = raw.toFixed(3);
+  else if (raw >= 1e9) displayNum = raw.toExponential(2);
+  else displayNum = (Math.round(raw * 10) / 10).toLocaleString();
+
+  const wholeUp = Math.ceil(raw);
+  const totalWeightStr = formatWeight(totalGrams);
+
+  resultBig.textContent = displayNum + ' ' + toEgg.name.toLowerCase() + (raw === 1 ? ' egg' : ' eggs');
+
+  const roundNote = (wholeUp !== Math.round(raw * 10) / 10 && raw > 0.1)
+    ? ' -- round up to <strong>' + wholeUp.toLocaleString() + '</strong> whole'
+    : '';
+  resultDesc.innerHTML = count + ' ' + fromEgg.name.toLowerCase() + (count === 1 ? ' egg' : ' eggs') + ' = ' + totalWeightStr + ' total' + roundNote;
+
+  eggVis.innerHTML = '';
+  overflowNote.textContent = '';
+  const display = Math.ceil(raw);
+  if (display >= 1 && display <= 60) {
+    for (let i = 0; i < Math.min(display, 48); i++) {
+      const s = document.createElement('span');
+      s.textContent = '🥚';
+      eggVis.appendChild(s);
+    }
+    if (display > 48) overflowNote.textContent = '(showing 48 of ' + display.toLocaleString() + ')';
+  } else if (display > 60) {
+    overflowNote.textContent = '(' + display.toLocaleString() + ' eggs -- too many to show)';
+  }
+  highlightRows();
+}
+
+function highlightRows() {
+  const fromId = document.getElementById('fromEgg').value;
+  const toId = document.getElementById('toEgg').value;
+  eggs.forEach(e => {
+    const row = document.getElementById('row-' + e.id);
+    if (row) row.className = (e.id === fromId || e.id === toId) ? 'highlighted' : '';
+  });
+}
+
+function swapEggs() {
+  const f = document.getElementById('fromEgg');
+  const t = document.getElementById('toEgg');
+  const tmp = f.value; f.value = t.value; t.value = tmp;
+  calculate();
+}
+
+/* ===== TRIVIA ===== */
+const triviaBank = [
+  { q:"How many hard-boiled eggs did Paul Newman's character eat in the 1967 film Cool Hand Luke?", opts:["24","50","72","100"], ans:1 },
+  { q:"An ostrich egg is equivalent to roughly how many chicken eggs?", opts:["6","12","24","48"], ans:2 },
+  { q:"What is another common name for a 'fairy egg' laid by a chicken?", opts:["Dream egg","Fart egg","Ghost egg","Moon egg"], ans:1 },
+  { q:"Which part of a chicken determines the colour of its eggshell?", opts:["Its beak","Its eyes","Its earlobes","Its feet"], ans:2 },
+  { q:"Approximately how many pores does a chicken eggshell have?", opts:["100","2,000","17,000","1,000,000"], ans:2 },
+  { q:"What is the human egg cell (ovum) approximately in size?", opts:["1 millimetre","0.12 millimetres","0.001 millimetres","5 millimetres"], ans:1 },
+  { q:"Which animal lays the largest egg relative to its body size?", opts:["Ostrich","Emu","Kiwi","Penguin"], ans:2 },
+  { q:"The Faberge egg tradition was started for which Russian tsar?", opts:["Peter the Great","Alexander III","Nicholas II","Ivan the Terrible"], ans:1 },
+  { q:"What does the Latin phrase 'ab ovo' literally mean?", opts:["About eggs","From the egg","Hard boiled","Egg on your face"], ans:1 },
+  { q:"How long does it take to hard-boil a single emu egg?", opts:["10 minutes","25 minutes","50 minutes","2 hours"], ans:2 },
+  { q:"Which country consumes roughly 340 eggs per person per year?", opts:["France","USA","Japan","Denmark"], ans:2 },
+  { q:"What was unusual about the Ayam Cemani chicken?", opts:["It lays golden eggs","It is entirely black, inside and out","It lays 3 eggs a day","Its eggs have no shell"], ans:1 },
+  { q:"Approximately how many eggs can a sea turtle lay in a single nesting?", opts:["5","25","110","500"], ans:2 },
+  { q:"A quail egg weighs approximately how many grams?", opts:["3g","9g","25g","40g"], ans:1 },
+  { q:"What happens when you spin a raw egg vs a hard-boiled egg?", opts:["Raw spins faster","Hard-boiled wobbles","Raw wobbles, hard-boiled spins smoothly","Both spin identically"], ans:2 },
+  { q:"What is 'tamago gohan'?", opts:["A Japanese omelette","Raw egg over rice","Pickled quail eggs","Egg drop soup"], ans:1 },
+  { q:"In medieval Europe, what were 'cock eggs' (fairy eggs) believed to cause?", opts:["Good luck","Bad weather","A curse","Extra large next eggs"], ans:2 },
+  { q:"One emu egg is roughly equivalent to how many chicken eggs?", opts:["3","6","10","20"], ans:2 },
+  { q:"What does a floating egg indicate when placed in water?", opts:["It is very fresh","It has gone bad or is old","It was laid by a large hen","It has a double yolk"], ans:1 },
+  { q:"Which ancient civilisation left quail eggs in the tombs of their rulers?", opts:["Romans","Aztecs","Ancient Egyptians","Ancient Greeks"], ans:2 },
+];
+
+let triviaQueue = [];
+let currentQ = null;
+let answered = false;
+let score = 0;
+let totalAnswered = 0;
+
+function shuffleArray(arr) {
+  const a = [...arr];
+  for (let i = a.length - 1; i > 0; i--) {
+    const j = Math.floor(Math.random() * (i + 1));
+    [a[i], a[j]] = [a[j], a[i]];
+  }
+  return a;
+}
+
+function refillQueue() { triviaQueue = shuffleArray(triviaBank); }
+
+function nextQuestion() {
+  if (triviaQueue.length === 0) refillQueue();
+  currentQ = triviaQueue.pop();
+  answered = false;
+  document.getElementById('triviaResult').textContent = '';
+  document.getElementById('triviaResult').className = 'trivia-result';
+  document.getElementById('triviaQ').textContent = currentQ.q;
+
+  const optContainer = document.getElementById('triviaOptions');
+  optContainer.innerHTML = '';
+  const letters = ['A','B','C','D'];
+  currentQ.opts.forEach((opt, i) => {
+    const btn = document.createElement('button');
+    btn.className = 'opt-btn';
+    btn.innerHTML = '<span class="opt-letter">' + letters[i] + '</span>' + opt;
+    btn.onclick = () => handleAnswer(i, btn);
+    optContainer.appendChild(btn);
+  });
+  document.getElementById('nextBtn').textContent = 'Next >>';
+}
+
+function handleAnswer(idx, btn) {
+  if (answered) return;
+  answered = true;
+  totalAnswered++;
+  const allBtns = document.querySelectorAll('.opt-btn');
+  allBtns.forEach(b => b.disabled = true);
+  if (idx === currentQ.ans) {
+    btn.classList.add('correct');
+    score++;
+    document.getElementById('triviaResult').textContent = '*** CORRECT!!! You beautiful egg genius. ***';
+    document.getElementById('triviaResult').className = 'trivia-result win';
+  } else {
+    btn.classList.add('wrong');
+    allBtns[currentQ.ans].classList.add('correct');
+    document.getElementById('triviaResult').textContent = 'WRONG!!! The answer was: ' + currentQ.opts[currentQ.ans];
+    document.getElementById('triviaResult').className = 'trivia-result lose';
+  }
+  document.getElementById('scoreDisplay').textContent = 'SCORE: ' + score + ' / ' + totalAnswered;
+}
+
+/* ===== EGG GAME ===== */
+const GAME_DURATION = 10;
+const DIFF_SETTINGS = {
+  easy:   { eggSize: 64, hasHotdog: false },
+  medium: { eggSize: 46, hasHotdog: false },
+  hard:   { eggSize: 34, hasHotdog: true  },
+};
+
+let gameDiff = 'easy';
+let gameRunning = false;
+let gameClicks = 0;
+let gameHotdogMisses = 0;
+let gameMoveInterval = null;
+let gameTickInterval = null;
+let gameTimeLeft = GAME_DURATION;
+let gameStartTime = null;
+
+function setDiff(diff, btn) {
+  if (gameRunning) return;
+  gameDiff = diff;
+  document.querySelectorAll('.diff-btn').forEach(b => b.classList.remove('active'));
+  btn.classList.add('active');
+  document.getElementById('gameResult').style.display = 'none';
+  const idleMsg = document.getElementById('gameIdleMsg');
+  idleMsg.style.display = 'flex';
+  idleMsg.textContent = diff === 'hard'
+    ? 'HARD MODE: Avoid the hotdog! Click ONLY the egg 🥚 NOT 🌭'
+    : 'Press START and click the egg as fast as you can!! 🥚';
+}
+
+function startGame() {
+  if (gameRunning) return;
+  gameRunning = true;
+  gameClicks = 0;
+  gameHotdogMisses = 0;
+  gameTimeLeft = GAME_DURATION;
+
+  const startBtn = document.getElementById('gameStartBtn');
+  startBtn.disabled = true;
+  document.getElementById('gameResult').style.display = 'none';
+
+  const arena = document.getElementById('gameArena');
+  arena.querySelectorAll('.game-token, .click-pop, .hotdog-flash').forEach(el => el.remove());
+
+  const idleMsg = document.getElementById('gameIdleMsg');
+  idleMsg.style.display = 'none';
+
+  const clock = document.getElementById('gameClock');
+  const counter = document.getElementById('gameCounter');
+  const fill = document.getElementById('timerFill');
+  clock.style.display = 'block';
+  counter.style.display = 'block';
+  clock.textContent = GAME_DURATION;
+  clock.className = 'game-clock';
+  counter.textContent = '0';
+  fill.style.width = '100%';
+  fill.style.transition = 'width ' + GAME_DURATION + 's linear';
+
+  requestAnimationFrame(() => {
+    requestAnimationFrame(() => { fill.style.width = '0%'; });
+  });
+
+  const settings = DIFF_SETTINGS[gameDiff];
+  spawnToken(arena, 'egg', settings.eggSize);
+  if (settings.hasHotdog) spawnToken(arena, 'hotdog', settings.eggSize);
+
+  gameMoveInterval = setInterval(() => {
+    moveToken(arena, 'hotdog-token', settings.eggSize);
+  }, 1100);
+
+  gameStartTime = Date.now();
+  gameTickInterval = setInterval(() => {
+    const elapsed = (Date.now() - gameStartTime) / 1000;
+    gameTimeLeft = Math.max(0, GAME_DURATION - elapsed);
+    const secs = Math.ceil(gameTimeLeft);
+    clock.textContent = secs;
+    if (secs <= 3) clock.className = 'game-clock urgent';
+    if (gameTimeLeft <= 0) endGame();
+  }, 100);
+}
+
+function spawnToken(arena, type, size) {
+  const el = document.createElement('div');
+  el.className = 'game-token' + (type === 'hotdog' ? ' hotdog' : '');
+  el.id = type === 'egg' ? 'egg-token' : 'hotdog-token';
+  el.style.fontSize = size + 'px';
+  el.textContent = type === 'egg' ? '🥚' : '🌭';
+  placeRandom(el, arena, size);
+  arena.appendChild(el);
+  if (type === 'egg') {
+    el.addEventListener('click', onEggClick);
+    el.addEventListener('touchstart', onEggTouch, { passive: true });
+  } else {
+    el.addEventListener('click', onHotdogClick);
+    el.addEventListener('touchstart', onHotdogTouch, { passive: true });
+  }
+}
+
+function placeRandom(el, arena, size) {
+  const aw = arena.clientWidth - size - 8;
+  const ah = arena.clientHeight - size - 16;
+  el.style.left = Math.max(4, Math.floor(Math.random() * aw)) + 'px';
+  el.style.top  = Math.max(30, Math.floor(Math.random() * (ah - 20))) + 'px';
+}
+
+function moveToken(arena, tokenId, size) {
+  const el = document.getElementById(tokenId);
+  if (el) placeRandom(el, arena, size);
+}
+
+function onEggClick(e) {
+  if (!gameRunning) return;
+  e.stopPropagation();
+  gameClicks++;
+  document.getElementById('gameCounter').textContent = gameClicks;
+  spawnPop(e, document.getElementById('gameArena'), '+1', false);
+}
+
+function onEggTouch(e) {
+  if (!gameRunning) return;
+  e.stopPropagation();
+  gameClicks++;
+  document.getElementById('gameCounter').textContent = gameClicks;
+  const touch = e.touches[0];
+  spawnPopAt(touch.clientX, touch.clientY, document.getElementById('gameArena'), '+1', false);
+}
+
+function onHotdogClick(e) {
+  if (!gameRunning) return;
+  e.stopPropagation();
+  gameHotdogMisses++;
+  spawnPop(e, document.getElementById('gameArena'), '🌭 NO!', true);
+  const hd = document.getElementById('hotdog-token');
+  if (hd) placeRandom(hd, document.getElementById('gameArena'), DIFF_SETTINGS[gameDiff].eggSize);
+}
+
+function onHotdogTouch(e) {
+  if (!gameRunning) return;
+  e.stopPropagation();
+  gameHotdogMisses++;
+  const touch = e.touches[0];
+  spawnPopAt(touch.clientX, touch.clientY, document.getElementById('gameArena'), '🌭 NO!', true);
+  const hd = document.getElementById('hotdog-token');
+  if (hd) placeRandom(hd, document.getElementById('gameArena'), DIFF_SETTINGS[gameDiff].eggSize);
+}
+
+function spawnPop(e, arena, label, isHotdog) {
+  spawnPopAt(e.clientX, e.clientY, arena, label, isHotdog);
+}
+
+function spawnPopAt(cx, cy, arena, label, isHotdog) {
+  const rect = arena.getBoundingClientRect();
+  const pop = document.createElement('div');
+  pop.className = isHotdog ? 'hotdog-flash' : 'click-pop';
+  pop.textContent = label;
+  pop.style.left = (cx - rect.left - 16) + 'px';
+  pop.style.top  = (cy - rect.top - 10) + 'px';
+  arena.appendChild(pop);
+  setTimeout(() => pop.remove(), 700);
+}
+
+function endGame() {
+  if (!gameRunning) return;
+  gameRunning = false;
+  clearInterval(gameMoveInterval);
+  clearInterval(gameTickInterval);
+
+  const arena = document.getElementById('gameArena');
+  arena.querySelectorAll('.game-token').forEach(el => el.remove());
+
+  document.getElementById('gameClock').style.display = 'none';
+  document.getElementById('gameCounter').style.display = 'none';
+  document.getElementById('timerFill').style.width = '0%';
+  document.getElementById('timerFill').style.transition = 'none';
+
+  const idleMsg = document.getElementById('gameIdleMsg');
+  idleMsg.style.display = 'flex';
+  idleMsg.textContent = 'GAME OVER!!! Click Play Again to try again!';
+
+  const startBtn = document.getElementById('gameStartBtn');
+  startBtn.disabled = false;
+  startBtn.textContent = '▶ PLAY AGAIN!!!';
+
+  const result = document.getElementById('gameResult');
+  let html;
+  if (gameDiff === 'hard') {
+    const hotdogNote = gameHotdogMisses === 0
+      ? 'And you never touched that hotdog. Incredible restraint.'
+      : '(You clicked the hotdog ' + gameHotdogMisses + ' time' + (gameHotdogMisses !== 1 ? 's' : '') + '. Tsk tsk.)';
+    html = '<span class="big-score">' + gameClicks + '</span>' +
+      "Great job avoiding that hotdog. You're a real egg eggspert!<br>" +
+      'You clicked the egg <strong>' + gameClicks + '</strong> time' + (gameClicks !== 1 ? 's' : '') + '! Great job!<br>' +
+      '<span style="font-size:11px;color:#808080;font-style:italic">' + hotdogNote + '</span>';
+  } else {
+    html = '<span class="big-score">' + gameClicks + '</span>' +
+      'Woah buddy, nice work. You clicked egg <strong>' + gameClicks + '</strong> time' + (gameClicks !== 1 ? 's' : '') + '! Great job!';
+  }
+  result.innerHTML = html;
+  result.style.display = 'block';
+}
+
+/* ===== INIT ===== */
+populate();
+refillQueue();
+nextQuestion();
+</script>
+</body>
+</html>
